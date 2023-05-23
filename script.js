@@ -35,5 +35,13 @@ function buildTile(image) {
 		) {
 			return;
 		}
+	// Reveal this image
+    element.style.backgroundImage = image;
+
+    if (!activeTile) {
+        activeTile = element;
+
+        return;
+    }
 
 	
