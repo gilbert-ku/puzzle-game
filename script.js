@@ -18,3 +18,22 @@ let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
+function buildTile(image) {
+	const element = document.createElement("div");
+
+	element.classList.add("tile");
+	element.setAttribute("data-image", image);
+	element.setAttribute("data-revealed", "false");
+
+	element.addEventListener("click", () => {
+		const revealed = element.getAttribute("data-revealed");
+
+		if (
+			awaitingEndOfMove
+			|| revealed === "true"
+			|| element == activeTile
+		) {
+			return;
+		}
+
+	
