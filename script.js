@@ -44,4 +44,19 @@ function buildTile(image) {
         return;
     }
 
-	
+    const imageToMatch = activeTile.getAttribute("data-color");
+
+    if (imageToMatch === image) {
+        element.setAttribute("data-revealed", "true");
+        activeTile.setAttribute("data-revealed", "true");
+
+        activeTile = null;
+        awaitingEndOfMove = false;
+        revealedCount += 2;
+
+        if (revealedCount === tileCount) {
+            alert("You win! Refresh to start again.");
+        }
+
+        return;
+    }
