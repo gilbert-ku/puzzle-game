@@ -60,3 +60,20 @@ function buildTile(image) {
 
         return;
     }
+
+    awaitingEndOfMove = true;
+
+    setTimeout(() => {
+        activeTile.style.backgroundImage = null;
+        element.style.backgroundImage = null;
+
+        awaitingEndOfMove = false;
+        activeTile = null;
+    }, 1000);
+});
+
+return element;
+}
+
+
+	
