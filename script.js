@@ -74,6 +74,14 @@ function buildTile(image) {
 
 return element;
 }
-
+// Build up tiles
+for (let i = 0; i < tileCount; i++) {
+    const randomIndex = Math.floor(Math.random() * imagesPicklist.length);
+    const image = imagesPicklist[randomIndex];
+    const tile = buildTile(image);
+    
+    imagesPicklist.splice(randomIndex, 1);
+    tilesContainer.appendChild(tile);
+    }
 
 	
